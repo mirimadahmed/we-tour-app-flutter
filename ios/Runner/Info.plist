@@ -27,12 +27,6 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>
-	<key>NSPhotoLibraryUsageDescription</key>
-        <string>Allow Transform app to view Photos</string>
-        <key>NSCameraUsageDescription</key>
-        <string>The app tries to use your camera</string>
-        <key>NSMicrophoneUsageDescription</key>
-        <string>Allow Transform app to use your microphone</string>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
@@ -47,5 +41,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>Allow Transform app to view Photos</string>
+    <key>NSCameraUsageDescription</key>
+    <string>The app tries to use your camera</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Allow Tour app to use your microphone</string>
 </dict>
 </plist>
