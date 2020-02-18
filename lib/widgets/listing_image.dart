@@ -18,14 +18,10 @@ class HomeImage extends StatelessWidget {
         child: Container(
           width: w,
           height: h,
-          decoration: BoxDecoration(
-            color: Colors.grey.withOpacity(0.1),
-            borderRadius: BorderRadius.circular(14)
-          ),
           child: FadeInImage.memoryNetwork(
             placeholder: kTransparentImage,
-            image: 'https://picsum.photos/250?image=9',
-            fit: BoxFit.fill,
+            image: image,
+            fit: BoxFit.contain,
           ),
         ),
       ),

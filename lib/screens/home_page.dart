@@ -40,52 +40,48 @@ class HomePage extends StatelessWidget {
               ],
             ),
             Expanded(
-              child: Stack(
-                children: <Widget>[
-                  SingleChildScrollView(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(left: 14,top: 10),
-                          child: Text("Discover",style: TextStyle(fontWeight: FontWeight.bold,fontSize: screen?w*.05:h*.05,color: Utils.baseColr),),
-                        ),
-                        SizedBox(height: screen?h*.09:w*.09,),
-                        CustomHorizental("Featured Experience"),
-                        CustomHorizental("3rd party tours"),
-                        CustomHorizental("Top journeys"),
-                        CustomHorizental("Hot Places"),
-                        CustomHorizental("Popular people",isPeole: true),
-                        SizedBox(height: 20,),
-                      ],
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(left: 14,top: 10),
+                      child: Text("Discover",style: TextStyle(fontWeight: FontWeight.bold,fontSize: screen?w*.05:h*.05,color: Utils.baseColr),),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left:screen?w*.05:h*.1,top: screen?h*.06:w*.06),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Container(
-                        padding: EdgeInsets.only(left: 10),
-                        width: w*.9,
-                        height: screen ? h*.07:w*.07,
-                        color: Utils.baseColr,
-                        child: Row(
-                          children: <Widget>[
-                            Icon(Icons.search,color: Colors.white,),
-                            SizedBox(width: 10,),
-                            Expanded(child: TextField(
-                              style: TextStyle(color: Colors.white),
-                              cursorColor: Colors.white,
-                              decoration: InputDecoration.collapsed(
-                                  hintText: "Type here to search",hintStyle: TextStyle(color: Colors.white)),
-                            )),
-                          ],
+                    SizedBox(height: screen?h*.03:w*.03,),
+                    Center(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Container(
+                          padding: EdgeInsets.only(left: 10),
+                          width: w*.9,
+                          height: screen ? h*.07:w*.07,
+                          color: Utils.baseColr,
+                          child: Row(
+                            children: <Widget>[
+                              Icon(Icons.search,color: Colors.white,),
+                              SizedBox(width: 10,),
+                              Expanded(child: TextField(
+                                style: TextStyle(color: Colors.white),
+                                cursorColor: Colors.white,
+                                decoration: InputDecoration.collapsed(
+                                    hintText: "Type here to search",hintStyle: TextStyle(color: Colors.white)),
+                              )),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(height: screen?h*.01:w*.01,),
+                    CustomHorizental("Featured Experience"),
+                    CustomHorizental("3rd party tours"),
+                    CustomHorizental("Top journeys"),
+                    CustomHorizental("Hot Places"),
+                    CustomHorizental("Popular people",isPeole: true),
+                    SizedBox(height: 20,),
+                  ],
+                ),
               ),
             ),
           ],

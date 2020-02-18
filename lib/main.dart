@@ -41,6 +41,11 @@ class _SplashScreenState extends State<SplashScreen> {
     double h = MediaQuery.of(context).size.height;
     Orientation orien = MediaQuery.of(context).orientation;
     bool screen = orien == Orientation.portrait ? true : false;
+    List<String>  _list = ["https://magoo-app.s3.amazonaws.com/we-tour/Travel-PNG-High-Quality-Image.png"
+    ,"https://magoo-app.s3.amazonaws.com/we-tour/pngfuel.com.png",
+      "https://magoo-app.s3.amazonaws.com/we-tour/travel-family-royalty-free-png-favpng-ZVB66hX8yeF3N5gandxC2RuHb.jpg"
+    ];
+    List<String> _listText = ["1","2","3"];
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -49,18 +54,13 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             SizedBox(height: screen?h*.1:w*.1,),
-            Text("find friends to travel with",style: TextStyle(color: Utils.baseColr,fontWeight: FontWeight.bold,fontSize: screen?w*.05:h*.05),),
             SizedBox(height: screen?h*.05:w*.05,),
             Container(
                 width: w,
                 height: screen?h*.6:w*.6,
                 child: HeaderSection(
-                  data: List.generate(5, ((index){
-                    return Container(
-                      width: w,
-                      color: Utils.baseColr,
-                    );
-                  })),
+                  data: _list,
+                  title: _listText,
                 )),
             SizedBox(height: screen?h*.1:w*.1,),
             CustomButton(

@@ -59,7 +59,9 @@ class CustomHorizental extends StatelessWidget {
                         ),
                       ),
                       isPeole ?
-                      CustomCircleWidget():
+                      CustomCircleWidget(
+                        image: 'https://picsum.photos/250?image=9',
+                      ):
                       Container(),
                       SizedBox(
                         height: 2,

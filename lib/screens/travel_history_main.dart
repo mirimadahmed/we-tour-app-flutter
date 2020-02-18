@@ -41,7 +41,7 @@ class TravelHistoryMain extends StatelessWidget {
               Row(
                 children: <Widget>[
                   DottedBorder(
-                    color: Colors.black,
+                    color: Utils.baseColr,
                     strokeWidth: 1,
                     dashPattern: [8, 4],
                     strokeCap: StrokeCap.butt,
@@ -101,10 +101,14 @@ class TravelHistoryMain extends StatelessWidget {
               ),
               SizedBox(height: screen ? h*.02:w*.02,),
               bloc.numberOfDays != null ?Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children:List.generate(bloc.numberOfDays, ((index){
-                  return Row(
+                  return Wrap(
                     children: <Widget>[
                       Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Container(
                             width: l/15,
@@ -117,38 +121,55 @@ class TravelHistoryMain extends StatelessWidget {
                               child: Text("${index+1}",style: TextStyle(color: Colors.white),),
                             ),
                           ),
-                          DottedBorder(
-                            color: Colors.black,
-                            strokeWidth: 1,
-                            dashPattern: [8, 4],
-                            strokeCap: StrokeCap.butt,
-                            child: Container(
-                              width: 0,
-                              height: screen ? h*.09:w*.09,
-                            ),
-                          ),
+//                          DottedBorder(
+//                            color: Colors.black,
+//                            strokeWidth: 1,
+//                            dashPattern: [8, 4],
+//                            strokeCap: StrokeCap.butt,
+//                            child: Container(
+//                              width: 0,
+//                            ),
+//                          ),
                         ],
                       ),
                       SizedBox(width: 10,),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: screen?h*.08:w*.08),
-                        child: DottedBorder(
-                          color: Colors.black,
-                          strokeWidth: 1,
-                          dashPattern: [8, 4],
-                          strokeCap: StrokeCap.butt,
-                          child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 2),
-                            height: screen ? h*.06:w*.06,
-                            color: Utils.baseColr,
-                            child: InkWell(
-                              child: Center(
-                                child: Text("Add new photo",style: TextStyle(color: Colors.white),),
-                              ),
-                              onTap: (){
-                                Navigator.push(context, Utils.createRoute(page: AddStopPage()));
-                              },
+                      Wrap(
+                        children:bloc.listAddPostBloc == null ? []: List.generate(bloc.listAddPostBloc[index]?.length??0, ((subIndex){
+                          return Card(
+                            elevation: 8,
+                            child: Column(
+                              children: <Widget>[
+                                SizedBox(
+                                  width: l/7,
+                                  height: l/9,
+                                  child:Image.file(bloc?.listAddPostBloc[index][subIndex].image,fit: BoxFit.fill,),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 4),
+                                  child: Text(bloc.listAddPostBloc[index][subIndex].stop??""),
+                                ),
+                              ],
                             ),
+                          );
+                        })),
+                      ),
+                      DottedBorder(
+                        color: Colors.black,
+                        strokeWidth: 1,
+                        dashPattern: [8, 4],
+                        strokeCap: StrokeCap.butt,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 2),
+                          height: screen ? h*.06:w*.06,
+                          width: w*.3,
+                          color: Utils.baseColr,
+                          child: InkWell(
+                            child: Center(
+                              child: Text("Add new photo",style: TextStyle(color: Colors.white),),
+                            ),
+                            onTap: (){
+                              Navigator.push(context, Utils.createRoute(page: AddStopPage(index: index,)));
+                            },
                           ),
                         ),
                       ),

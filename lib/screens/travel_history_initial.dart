@@ -76,15 +76,15 @@ class TravelHistoryInitial extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Expanded(child: Text(bloc.datefrom ?? "Date from",style:TextStyle(fontSize: screen ? w*.04:h*.04,fontWeight: FontWeight.bold,color: Color.fromRGBO(17, 141, 150, 1.0).withOpacity(0.7)))),
-                                  IconButton(
-                                    icon: Icon(Icons.date_range,color: Utils.baseColr,),
-                                    onPressed: () => bloc.dateFromCheck(context),
-                                  ),
-                                ],
+                              InkWell(
+                                onTap: () => bloc.dateFromCheck(context),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Expanded(child: Text(bloc.datefrom ?? "Date from",style:TextStyle(fontSize: screen ? w*.04:h*.04,fontWeight: FontWeight.bold,color: Color.fromRGBO(17, 141, 150, 1.0).withOpacity(0.7)))),
+                                    Icon(Icons.date_range,color: Utils.baseColr,),
+                                  ],
+                                ),
                               ),
                               Container(
                                 height: 1,
@@ -99,15 +99,15 @@ class TravelHistoryInitial extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Expanded(child: Text(bloc.dateTo ?? "Date to",style:TextStyle(fontSize: screen ? w*.04:h*.04,fontWeight: FontWeight.bold,color: Color.fromRGBO(17, 141, 150, 1.0).withOpacity(0.7)))),
-                                  IconButton(
-                                    icon: Icon(Icons.date_range,color: Utils.baseColr,),
-                                    onPressed: () => bloc.dateToCheck(context),
-                                  ),
-                                ],
+                              InkWell(
+                                onTap: () => bloc.dateToCheck(context),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Expanded(child: Text(bloc.dateTo ?? "Date to",style:TextStyle(fontSize: screen ? w*.04:h*.04,fontWeight: FontWeight.bold,color: Color.fromRGBO(17, 141, 150, 1.0).withOpacity(0.7)))),
+                                    Icon(Icons.date_range,color: Utils.baseColr,),
+                                  ],
+                                ),
                               ),
                               Container(
                                 height: 1,
@@ -140,7 +140,7 @@ class TravelHistoryInitial extends StatelessWidget {
                                   Text("per day",style:TextStyle(fontSize: screen ? w*.04:h*.04,fontWeight: FontWeight.bold,color: Color.fromRGBO(17, 141, 150, 1.0))),
                                   CustomSwitch(
                                     setting: true,
-                                    long: l/15,
+                                    long: l/20,
                                     w1: w*0.2,
                                     h1: screen ? h*.05 : w*.06,
                                     activeColor: Utils.baseColr,

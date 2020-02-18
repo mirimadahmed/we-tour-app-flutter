@@ -28,21 +28,27 @@ class SignUpPage extends StatelessWidget {
                 Text("New Account",style: TextStyle(color: Utils.baseColr,fontWeight: FontWeight.bold,fontSize: screen?w*.06:h*.06),),
                 Column(
                   children: <Widget>[
-                    Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(color:Utils.baseColr,width: 4),
-                          borderRadius: BorderRadius.circular(200)
-                      ),
-                      width: l/10,
-                      height: l/10,
-                      child: InkWell(
+                    Card(
+                      elevation: 5,
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(200),
-                        onTap: bloc.getImageGallery,
-                        child:bloc.image == null ?
-                            Icon(Icons.camera_alt,color: Colors.black54,)
-                            :ClipRRect(
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color:Utils.baseColr,width: 4),
                             borderRadius: BorderRadius.circular(200),
-                            child: Image.file(bloc.image,fit: BoxFit.cover,)),
+                        ),
+                        width: l/10,
+                        height: l/10,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(200),
+                          onTap: bloc.getImageGallery,
+                          child:bloc.image == null ?
+                              Icon(Icons.camera_alt,color: Colors.black54,)
+                              :ClipRRect(
+                              borderRadius: BorderRadius.circular(200),
+                              child: Image.file(bloc.image,fit: BoxFit.cover,)),
+                        ),
                       ),
                     ),
                     SizedBox(height: 10,),

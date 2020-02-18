@@ -19,6 +19,7 @@ class CustomTextFieldWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           TextFormField(
+            style: TextStyle(color: Utils.baseColr),
             scrollPadding: EdgeInsets.all(0),
             controller: controller,
             keyboardType: inputType,
