@@ -4,6 +4,7 @@ import 'package:tour_app/bloc_pattern/add_photo_bloc.dart';
 import 'package:tour_app/bloc_pattern/bloc_service.dart';
 import 'package:tour_app/utils/repo.dart';
 import 'package:tour_app/widgets/dotted_border.dart';
+import 'package:tour_app/widgets/stop_view.dart';
 
 import 'add_stop.dart';
 
@@ -134,44 +135,59 @@ class TravelHistoryMain extends StatelessWidget {
                       ),
                       SizedBox(width: 10,),
                       Wrap(
-                        children:bloc.listAddPostBloc == null ? []: List.generate(bloc.listAddPostBloc[index]?.length??0, ((subIndex){
-                          return Card(
-                            elevation: 8,
-                            child: Column(
-                              children: <Widget>[
-                                SizedBox(
-                                  width: l/7,
-                                  height: l/9,
-                                  child:Image.file(bloc?.listAddPostBloc[index][subIndex].image,fit: BoxFit.fill,),
+                        children: <Widget>[
+                          Wrap(
+                            children:bloc.listAddPostBloc == null ? []: List.generate(bloc.listAddPostBloc[index]?.length??0, ((subIndex){
+                              return InkWell(
+                                onTap: (){
+                                  Navigator.push(context, Utils.createRoute(page: StopView(
+                                    image: bloc?.listAddPostBloc[index][subIndex].image,
+                                    mainIndex: index,
+                                    index: subIndex,
+                                    stopName: bloc?.listAddPostBloc[index][subIndex].stop,
+                                    decryption: bloc?.listAddPostBloc[index][subIndex].desc,
+                                  )));
+                                },
+                                child: Card(
+                                  elevation: 8,
+                                  child: Column(
+                                    children: <Widget>[
+                                      SizedBox(
+                                        width: l/7,
+                                        height: l/9,
+                                        child:Image.file(bloc?.listAddPostBloc[index][subIndex].image,fit: BoxFit.fill,),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(vertical: 4),
+                                        child: Text(bloc.listAddPostBloc[index][subIndex].stop??""),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 4),
-                                  child: Text(bloc.listAddPostBloc[index][subIndex].stop??""),
-                                ),
-                              ],
-                            ),
-                          );
-                        })),
-                      ),
-                      DottedBorder(
-                        color: Colors.black,
-                        strokeWidth: 1,
-                        dashPattern: [8, 4],
-                        strokeCap: StrokeCap.butt,
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 2),
-                          height: screen ? h*.06:w*.06,
-                          width: w*.3,
-                          color: Utils.baseColr,
-                          child: InkWell(
-                            child: Center(
-                              child: Text("Add new photo",style: TextStyle(color: Colors.white),),
-                            ),
-                            onTap: (){
-                              Navigator.push(context, Utils.createRoute(page: AddStopPage(index: index,)));
-                            },
+                              );
+                            })),
                           ),
-                        ),
+                          DottedBorder(
+                            color: Colors.black,
+                            strokeWidth: 1,
+                            dashPattern: [8, 4],
+                            strokeCap: StrokeCap.butt,
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 2),
+                              height: screen ? h*.06:w*.06,
+                              width: w*.3,
+                              color: Utils.baseColr,
+                              child: InkWell(
+                                child: Center(
+                                  child: Text("Add new photo",style: TextStyle(color: Colors.white),),
+                                ),
+                                onTap: (){
+                                  Navigator.push(context, Utils.createRoute(page: AddStopPage(index: index,)));
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   );

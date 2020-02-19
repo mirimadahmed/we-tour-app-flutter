@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tour_app/screens/place_details_page.dart';
+import 'package:tour_app/screens/travel_history_initial.dart';
 import 'package:tour_app/utils/repo.dart';
 import 'package:tour_app/widgets/custom_button.dart';
 import 'package:tour_app/widgets/custom_cirlce_widget2.dart';
-import 'package:tour_app/widgets/listing_image.dart';
 
 
 class ProfilePage extends StatelessWidget {
@@ -132,7 +132,7 @@ class ProfilePage extends StatelessWidget {
                     child: CustomButton(
                       text: "TELL US WHERE YOU'VE BEEN",
                       onPressed: (){
-                        Navigator.push(context, Utils.createRoute(page: PlaceDetailsPage()));
+                        Navigator.pushAndRemoveUntil(context, Utils.createRoute(page: TravelHistoryInitial()),(Route<dynamic> route) => false);
                       },
                     ),
                   ),

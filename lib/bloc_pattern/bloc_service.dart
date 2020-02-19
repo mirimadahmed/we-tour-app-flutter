@@ -105,5 +105,15 @@ class BlocServices extends ChangeNotifier{
     listAddPostBloc[mainIndex].add(data);
     notifyListeners();
   }
+
+  void updatePost(mainIndex,index,data){
+    listAddPostBloc[mainIndex][index] = data;
+    notifyListeners();
+  }
+
+  removerPost(mainIndex,index){
+    listAddPostBloc[mainIndex].removeAt(index);
+    notifyListeners();
+  }
 }
 

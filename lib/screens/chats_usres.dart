@@ -45,13 +45,6 @@ class ChatUsers extends StatelessWidget {
                           padding: EdgeInsets.all(14),
                           child: Row(
                             children: <Widget>[
-                              ((index+1) % 2 == 0) ?
-                              CustomCircleWidget(
-                                wdth: l/13.3,
-                                hght: l/13.3,
-                                hght1: l/14,
-                                wdth1: l/14,
-                              ) :
                               CustomCircleWidget2(
                                 wdth: l/14,
                                 hght: l/14,

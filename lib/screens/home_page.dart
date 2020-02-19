@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tour_app/screens/people_page.dart';
+import 'package:tour_app/screens/place_details_page.dart';
+import 'package:tour_app/screens/see_all_details_page.dart';
 import 'package:tour_app/utils/repo.dart';
 import 'package:tour_app/widgets/custom_timeline_horizenal.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -74,11 +77,27 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: screen?h*.01:w*.01,),
-                    CustomHorizental("Featured Experience"),
-                    CustomHorizental("3rd party tours"),
-                    CustomHorizental("Top journeys"),
-                    CustomHorizental("Hot Places"),
-                    CustomHorizental("Popular people",isPeole: true),
+                    CustomHorizental("Featured Experience",
+                    onPressed: (){
+                      Navigator.push(context, Utils.createRoute(page: SeeAllDetailsPage()));
+                    },),
+                    CustomHorizental("3rd party tours",
+                      onPressed: (){
+                        Navigator.push(context, Utils.createRoute(page: SeeAllDetailsPage(isTrip: true,)));
+                      },),
+                    CustomHorizental("Top journeys",
+                      onPressed: (){
+                        Navigator.push(context, Utils.createRoute(page: SeeAllDetailsPage(isTrip: true,)));
+                      },),
+                    CustomHorizental("Hot Places",
+                    onPressed: (){
+                      Navigator.push(context, Utils.createRoute(page: PlaceDetailsPage()));
+                    },),
+                    CustomHorizental("Popular people",isPeole: true,
+                    onTapPic: (){
+                      Navigator.push(context, Utils.createRoute(page: PeoplePage()));
+                    },
+                    ),
                     SizedBox(height: 20,),
                   ],
                 ),

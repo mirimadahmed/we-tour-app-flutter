@@ -8,7 +8,8 @@ class CustomHorizental extends StatelessWidget {
   final String headfing;
   final bool isPeole;
   final GestureTapCallback onPressed;
-  CustomHorizental(this.headfing,{this.isPeole = false, this.onPressed});
+  final GestureTapCallback onTapPic;
+  CustomHorizental(this.headfing,{this.isPeole = false, this.onPressed, this.onTapPic});
   Widget build(BuildContext context) {
     Orientation orien = MediaQuery.of(context).orientation;
     double w = MediaQuery.of(context).size.width;
@@ -59,8 +60,11 @@ class CustomHorizental extends StatelessWidget {
                         ),
                       ),
                       isPeole ?
-                      CustomCircleWidget(
-                        image: 'https://picsum.photos/250?image=9',
+                      InkWell(
+                        onTap: onTapPic,
+                        child: CustomCircleWidget(
+                          image: 'https://picsum.photos/250?image=9',
+                        ),
                       ):
                       Container(),
                       SizedBox(

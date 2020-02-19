@@ -31,6 +31,7 @@ class CustomCircleWidget2 extends StatelessWidget {
           ]
       ),
       child: HomeImage(
+        image: "https://picsum.photos/250?image=9",
         borderRadius: BorderRadius.circular(100),
         w: wdth ?? l/7.8,
         h: hght ?? l/7.8,
