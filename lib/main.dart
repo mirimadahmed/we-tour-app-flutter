@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
     ,"https://magoo-app.s3.amazonaws.com/we-tour/pngfuel.com.png",
       "https://magoo-app.s3.amazonaws.com/we-tour/travel-family-royalty-free-png-favpng-ZVB66hX8yeF3N5gandxC2RuHb.jpg"
     ];
-    List<String> _listText = ["1","2","3"];
+    List<String> _listText = ["Find your next adventure","Find people with similar interests","Plan your next journey"];
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(

@@ -26,7 +26,7 @@ class PlaceDetailsPage extends StatelessWidget {
                 height: screen?h*.2+h*.02:w*.2,
                 child: FadeInImage.memoryNetwork(
                   placeholder: kTransparentImage,
-                  image: 'https://picsum.photos/250?image=9',
+                  image: 'https://magoo-app.s3.amazonaws.com/we-tour/183223496.jpg',
                   fit: BoxFit.fill,
                 ),
               ),

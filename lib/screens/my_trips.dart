@@ -37,7 +37,7 @@ class MyTrips extends StatelessWidget {
                       height: l/13,
                       child:FadeInImage.memoryNetwork(
                         placeholder: kTransparentImage,
-                        image: 'https://picsum.photos/250?image=9',
+                        image: 'https://magoo-app.s3.amazonaws.com/we-tour/183223496.jpg',
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -64,7 +64,7 @@ class MyTrips extends StatelessWidget {
                       height: screen?h*.3:w*.3,
                       child:FadeInImage.memoryNetwork(
                         placeholder: kTransparentImage,
-                        image: 'https://picsum.photos/250?image=9',
+                        image: 'https://magoo-app.s3.amazonaws.com/we-tour/183223496.jpg',
                         fit: BoxFit.fill,
                       ),
                     ),

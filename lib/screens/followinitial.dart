@@ -9,16 +9,16 @@ import 'package:transparent_image/transparent_image.dart';
 
 class FollowInitial extends StatelessWidget {
   List<FollowingModel> _list = [
-    FollowingModel(image: "https://picsum.photos/250?image=9",name: "John Doe",state: "Turkey"),
-    FollowingModel(image: "https://picsum.photos/250?image=9",name: "John Doe",state: "Turkey"),
-    FollowingModel(image: "https://picsum.photos/250?image=9",name: "John Doe",state: "Turkey"),
-    FollowingModel(image: "https://picsum.photos/250?image=9",name: "John Doe",state: "Turkey"),
-    FollowingModel(image: "https://picsum.photos/250?image=9",name: "John Doe",state: "Turkey"),
-    FollowingModel(image: "https://picsum.photos/250?image=9",name: "John Doe",state: "Turkey"),
-    FollowingModel(image: "https://picsum.photos/250?image=9",name: "John Doe",state: "Turkey"),
-    FollowingModel(image: "https://picsum.photos/250?image=9",name: "John Doe",state: "Turkey"),
-    FollowingModel(image: "https://picsum.photos/250?image=9",name: "John Doe",state: "Turkey"),
-    FollowingModel(image: "https://picsum.photos/250?image=9",name: "John Doe",state: "Turkey"),
+    FollowingModel(image: "https://www.pngarts.com/files/3/Smiling-Man-PNG-Image-Background.png",name: "John Doe",state: "Turkey"),
+    FollowingModel(image: "https://www.pngarts.com/files/3/Smiling-Man-PNG-Image-Background.png",name: "John Doe",state: "Turkey"),
+    FollowingModel(image: "https://www.pngarts.com/files/3/Smiling-Man-PNG-Image-Background.png",name: "John Doe",state: "Turkey"),
+    FollowingModel(image: "https://www.pngarts.com/files/3/Smiling-Man-PNG-Image-Background.png",name: "John Doe",state: "Turkey"),
+    FollowingModel(image: "https://www.pngarts.com/files/3/Smiling-Man-PNG-Image-Background.png",name: "John Doe",state: "Turkey"),
+    FollowingModel(image: "https://www.pngarts.com/files/3/Smiling-Man-PNG-Image-Background.png",name: "John Doe",state: "Turkey"),
+    FollowingModel(image: "https://www.pngarts.com/files/3/Smiling-Man-PNG-Image-Background.png",name: "John Doe",state: "Turkey"),
+    FollowingModel(image: "https://www.pngarts.com/files/3/Smiling-Man-PNG-Image-Background.png",name: "John Doe",state: "Turkey"),
+    FollowingModel(image: "https://www.pngarts.com/files/3/Smiling-Man-PNG-Image-Background.png",name: "John Doe",state: "Turkey"),
+    FollowingModel(image: "https://www.pngarts.com/files/3/Smiling-Man-PNG-Image-Background.png",name: "John Doe",state: "Turkey"),
   ];
   @override
   Widget build(BuildContext context) {

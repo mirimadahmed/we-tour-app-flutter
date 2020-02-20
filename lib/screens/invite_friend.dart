@@ -68,7 +68,7 @@ class InviteFriends extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(100),
                                   child: FadeInImage.memoryNetwork(
                                     placeholder: kTransparentImage,
-                                    image: 'https://picsum.photos/250?image=9',
+                                    image: 'https://www.pngarts.com/files/3/Smiling-Man-PNG-Image-Background.png',
                                     fit: BoxFit.fill,
                                   ),
                                 ),

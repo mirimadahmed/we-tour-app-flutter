@@ -31,7 +31,7 @@ class CustomCircleWidget2 extends StatelessWidget {
           ]
       ),
       child: HomeImage(
-        image: "https://picsum.photos/250?image=9",
+        image: "https://www.pngarts.com/files/3/Smiling-Man-PNG-Image-Background.png",
         borderRadius: BorderRadius.circular(100),
         w: wdth ?? l/7.8,
         h: hght ?? l/7.8,

@@ -53,7 +53,7 @@ class CustomHorizental extends StatelessWidget {
                             borderRadius: BorderRadius.circular(6),
                             child: FadeInImage.memoryNetwork(
                               placeholder: kTransparentImage,
-                              image: 'https://picsum.photos/250?image=9',
+                              image: 'https://magoo-app.s3.amazonaws.com/we-tour/183223496.jpg',
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -63,7 +63,7 @@ class CustomHorizental extends StatelessWidget {
                       InkWell(
                         onTap: onTapPic,
                         child: CustomCircleWidget(
-                          image: 'https://picsum.photos/250?image=9',
+                          image: 'https://magoo-app.s3.amazonaws.com/we-tour/183223496.jpg',
                         ),
                       ):
                       Container(),
