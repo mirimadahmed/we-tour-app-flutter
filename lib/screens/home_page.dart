@@ -4,6 +4,7 @@ import 'package:tour_app/screens/place_details_page.dart';
 import 'package:tour_app/screens/see_all_details_page.dart';
 import 'package:tour_app/utils/repo.dart';
 import 'package:tour_app/widgets/custom_timeline_horizenal.dart';
+import 'package:tour_app/widgets/header_section_widget.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,33 +15,26 @@ class HomePage extends StatelessWidget {
     double l = MediaQuery.of(context).size.longestSide;
     Orientation orien = MediaQuery.of(context).orientation;
     bool screen = orien == Orientation.portrait ? true : false;
+    List<String>  _list = ["https://magoo-app.s3.amazonaws.com/we-tour/Travel-PNG-High-Quality-Image.png"
+      ,"https://magoo-app.s3.amazonaws.com/we-tour/pngfuel.com.png",
+      "https://magoo-app.s3.amazonaws.com/we-tour/travel-family-royalty-free-png-favpng-ZVB66hX8yeF3N5gandxC2RuHb.jpg"
+    ];
+    List<String> _listText = ["1","2","3"];
     return Container(
       child: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Stack(
-              children: <Widget>[
-                Container(
-                  width: w,
-                  height: h*.3,
-                  child: FadeInImage.memoryNetwork(
-                    placeholder: kTransparentImage,
-                    image: 'https://picsum.photos/250?image=9',
-                    fit: BoxFit.fill,
-                  ),
+            Container(
+              height: screen?h*.4:w*.4,
+              width: w,
+              child: Center(
+                child: HeaderSection(
+                  imageList: _list,
+                  title: _listText,
                 ),
-                Positioned(
-                  bottom: 12,
-                  child: Container(
-                    padding: EdgeInsets.only(bottom: 5,top: 5,left: 13),
-                    width: w,
-                  color: Colors.black54,
-                    child: Text("Heading", style: TextStyle(fontSize: screen?w*.04:h*.04,fontWeight: FontWeight.bold,color: Colors.white),),
-                  ),
-                ),
-              ],
+              ),
             ),
             Expanded(
               child: SingleChildScrollView(
